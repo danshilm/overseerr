@@ -378,6 +378,10 @@ export interface TmdbCollection {
   overview?: string;
   poster_path?: string;
   backdrop_path?: string;
+  genres: {
+    id: number;
+    name: string;
+  }[];
   parts: TmdbMovieResult[];
 }
 

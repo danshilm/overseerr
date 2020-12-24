@@ -1,5 +1,6 @@
 import { TmdbCollection } from '../api/themoviedb';
 import Media from '../entity/Media';
+import { Genre } from './common';
 import { mapMovieResult, MovieResult } from './Search';
 
 export interface Collection {
@@ -8,6 +9,7 @@ export interface Collection {
   overview?: string;
   posterPath?: string;
   backdropPath?: string;
+  genres: Genre[];
   parts: MovieResult[];
 }
 
@@ -20,6 +22,7 @@ export const mapCollection = (
   overview: collection.overview,
   posterPath: collection.poster_path,
   backdropPath: collection.backdrop_path,
+  genres: collection.genres,
   parts: collection.parts.map((part) =>
     mapMovieResult(
       part,

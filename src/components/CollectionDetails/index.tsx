@@ -195,6 +195,7 @@ const CollectionDetails: React.FC<CollectionDetailsProps> = ({
             {intl.formatMessage(messages.numberofmovies, {
               count: data.parts.length,
             })}
+            {data.genres.map((g) => g.name).join(', ')}
           </span>
         </div>
         <div className="flex justify-end flex-1 mt-4 md:mt-0">
